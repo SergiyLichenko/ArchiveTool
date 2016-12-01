@@ -1,0 +1,60 @@
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+c:\users\the vfx style\documents\visual studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+C:\Users\The VFX StyLe\Documents\Visual Studio 2015\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+C:\Users\The VFX StyLe\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+C:\Users\Don Fapomar\Desktop\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+D:\Нова фігня\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+D:\Нова фігня\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+D:\Нова фігня\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+D:\Нова фігня\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Info.resources
+F:\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+F:\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+F:\Projects\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Info.resources
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
+F:\Projects\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+F:\Projects\Apps\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+F:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+F:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+E:\Projects\Apps\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe.config
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.exe
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.pdb
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csprojResolveAssemblyReference.cache
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Info.resources
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.View.resources
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.csproj.GenerateResource.Cache
+E:\Projects\Apps\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.exe
+E:\Projects\Apps\ArchiveTool\ArchiveTool\bin\Debug\ArchiveTool.pdb
+E:\Projects\Apps\ArchiveTool\ArchiveTool\obj\Debug\ArchiveTool.Properties.Resources.resources
