@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ArchiveTool.Controller" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YEAABBAIIBAAAQCFBAgggAQADCBAAIAEpAIEiAAIEAA=</HashCode>
+      <FileName>Controller - Archive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchiveTool.Model" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAgAAAAAAAIAAAAAAEAAAAgAAAAAA=</HashCode>
+      <FileName>Model-Archive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchiveTool.Node">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAACAAABAACACAAAAAAAA=</HashCode>
+      <FileName>BinaryTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchiveTool.Program" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchiveTool.View" Collapsed="true">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAEACAAAAEAAACgBAACAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="ArchiveTool.UnArchived" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller - UnArchive.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
