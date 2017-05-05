@@ -27,12 +27,12 @@ Example of usage:
    
   6. Here is unarchived file:
   
-    ![alt tag](https://github.com/SergiyLichenko/ArchiveTool/blob/master/ArchiveTool/Docs/Unarchived%20file.png )
+   ![1](https://cloud.githubusercontent.com/assets/19876131/25744673/d321bba0-31a3-11e7-8d87-1f471a2c147e.png)
     
     It has the same size as the original file
     
   7. Let's compare contents:
   
-    ![alt tag](https://github.com/SergiyLichenko/ArchiveTool/blob/master/ArchiveTool/Docs/Comparison.png )
+    ![2](https://cloud.githubusercontent.com/assets/19876131/25744684/df28fdb4-31a3-11e7-8546-4a14d3329d60.png)
     
  
