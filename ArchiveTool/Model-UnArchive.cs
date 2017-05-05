@@ -12,40 +12,40 @@ namespace ArchiveTool
     public delegate void UnArchPers(int persantage);
     public partial class Model
     {
-        System.Windows.Forms.Timer timerForPers;
-        FileStream streamUnCounts;
+        public StringBuilder tempStr;
+        public int sizeOftree;
         public int countOfZeroes;
         public event UnArchPers unArchPers;
-        long endOfFile;
-        long bytesCount;
-        int k = -1;
-        public StringBuilder tempStr;
-        int tempSizeTree = -1;
-        public int sizeOftree;
-
-
+        
+        private System.Windows.Forms.Timer timerForPers;
+        private FileStream streamUnCounts;
+        private long endOfFile;
+        private long bytesCount;
+        private int k = -1;
+        private int tempSizeTree = -1;
+        
         public string Unarchive(string path, out int sizeOfTree)
         {
-            FileStream fileStream = File.OpenRead(path);        //открытие файла для разархивации
-            StringBuilder codedFile = new StringBuilder();      //строка закодированного файла
+            FileStream fileStream = File.OpenRead(path);       
+            StringBuilder codedFile = new StringBuilder();     
 
 
-            byte[] fileData = new byte[fileStream.Length - 2];    //массив для хранение файла
-            int countOfZeroes = fileStream.ReadByte();          //количество нулей
-            sizeOfTree = fileStream.ReadByte();                 //количество эллементов в дереве
+            byte[] fileData = new byte[fileStream.Length - 2];   
+            int countOfZeroes = fileStream.ReadByte();       
+            sizeOfTree = fileStream.ReadByte();              
 
-            fileStream.Read(fileData, 0, (int)fileStream.Length - 2); //считывание из файла
+            fileStream.Read(fileData, 0, (int)fileStream.Length - 2); 
             fileStream.Close();
 
-            foreach (byte item in fileData)         //создание строки из закодированного файла
+            foreach (byte item in fileData)       
             {
-                string temp = Convert.ToString(item, 2);    //конвертация из числа в строку из 0, 1
+                string temp = Convert.ToString(item, 2);    
 
-                for (int i = temp.Length; i < 8; i++)             //запись нулей в старшие биты
+                for (int i = temp.Length; i < 8; i++)            
                     temp = temp.Insert(0, "0");
-                codedFile.Append(temp);                      //расширение строки
+                codedFile.Append(temp);                    
             }
-            codedFile.Remove(codedFile.Length - countOfZeroes, countOfZeroes);   //удаление нулей вконце
+            codedFile.Remove(codedFile.Length - countOfZeroes, countOfZeroes);  
 
 
             return codedFile.ToString();
@@ -169,15 +169,15 @@ namespace ArchiveTool
                             tempS = tempS.Remove(tempS.Length - countOfZeroes);
                         for (int i = 0; i < tempS.Length; i++)
                         {
-                            if (tempS[i] == '1')//идем вправо
+                            if (tempS[i] == '1')
                                 temp = temp.Right;
-                            else                        //идем влево
+                            else                      
                                 temp = temp.Left;
 
-                            if (temp.Data != -1)        //если найдена буква
+                            if (temp.Data != -1)       
                             {
                                 output.WriteByte((byte)temp.Data);
-                                temp = rootUn;                   //возвращение в корень
+                                temp = rootUn;                  
                             }
                         }
                         break;
@@ -190,8 +190,6 @@ namespace ArchiveTool
                     break;
                 }
             }
-
-
             worker.ReportProgress(1);
 
             input.Close();
