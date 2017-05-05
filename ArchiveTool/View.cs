@@ -13,28 +13,22 @@ namespace ArchiveTool
 {
     public partial class View : Form
     {
-        Controller controller;//объект класса Controller
+        private Controller controller;
+        private System.Windows.Forms.Timer timer2;
+        private DateTime now2;
+        private Timer timerForBar2;
+        private System.Windows.Forms.Timer timer1;
+        private DateTime now;
+        private Timer timerForBar;
 
-        System.Windows.Forms.Timer timer2;
-        DateTime now2;
-        Timer timerForBar2;
-
-        System.Windows.Forms.Timer timer1;
-        DateTime now;
-        Timer timerForBar;
-
-        public View()//конструктор
+        public View()
         {
             InitializeComponent();
             controller = new Controller();
             this.button1.Enabled = false;
             this.button2.Enabled = false;
         }
-
-
-
-
-
+        
         private void Controller_arhiveEnd(long inputSize, long outpuSize, double entropy,double entropy2, double bitPerSymbol)
         {
             TimeSpan temp = (DateTime.Now - now);
