@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 namespace ArchiveTool
 {
     public partial class Model
-    {
-        StringBuilder statistics = new StringBuilder();
+    {        
         public int sizeOfArhivingFile;
         public string pathToArchivingFile;
         public byte sizeOfTree;
         public double entropy;
-
-        FileStream fileStreamForCounts;
-        int[] result;
         public bool creatingCounts;
+        
+        private StringBuilder statistics = new StringBuilder();
+        private FileStream fileStreamForCounts;
+        private int[] result;
+        
         internal void CreateCounts(string path, BackgroundWorker worker)
         {
             pathToArchivingFile = path;
@@ -33,9 +34,7 @@ namespace ArchiveTool
             while (true)
             {
                 try
-                {
-                   // if (worker.CancellationPending)
-                     //   return;
+                {                 
                     result[fileStreamForCounts.ReadByte()]++;
                 }
                 catch (Exception)
@@ -47,16 +46,15 @@ namespace ArchiveTool
             fileStreamForCounts = null;
             creatingCounts = false;
         }
-        internal List<Node> CreateLeaves()  //считывание из файла
+        internal List<Node> CreateLeaves() 
         {
-
-            List<Node> fileData = new List<Node>();   //создание списка эллементов дерева
-            for (int i = 0; i < result.Length; i++)             //заполнение элементов
+            List<Node> fileData = new List<Node>();   
+            for (int i = 0; i < result.Length; i++)            
                 if (result[i] != 0)
                     fileData.Add(new Node((byte)i, result[i]));
 
             fileData.Sort((a, b) => a.Weight.CompareTo(b.Weight));
-            return fileData;        //возвращение списка эллементов дерева
+            return fileData;      
         }
 
         public void CreateStatistics(List<Node> fileData)
@@ -89,8 +87,8 @@ namespace ArchiveTool
             string path = Environment.CurrentDirectory + "Statistics.txt";
             if (File.Exists(path))
                 File.Delete(path);
-            Stream stream = File.OpenWrite(path);                  //
-            StreamWriter writer = new StreamWriter(stream, Encoding.Default);   //запись в файл
+            Stream stream = File.OpenWrite(path);                 
+            StreamWriter writer = new StreamWriter(stream, Encoding.Default);   
             writer.Write("Энтропия = " + entropy);
             writer.Write(statistics.ToString());
 
@@ -110,7 +108,7 @@ namespace ArchiveTool
                 temp.Append(String.Format("{0} - {1}", item.Key, tempStr));
                 temp.Append(Environment.NewLine);
             }
-            writer.Write(temp);                                            //
+            writer.Write(temp);                                           
             writer.Close();
         }
 
@@ -131,8 +129,8 @@ namespace ArchiveTool
                     break;
                 }
             }
-            List<Node> fileData = new List<Node>();   //создание списка эллементов дерева
-            for (int i = 0; i < resu.Length; i++)             //заполнение элементов
+            List<Node> fileData = new List<Node>();  
+            for (int i = 0; i < resu.Length; i++)           
                 if (resu[i] != 0)
                     fileData.Add(new Node((byte)i, resu[i]));
 
