@@ -33,6 +33,6 @@ Example of usage:
     
   7. Let's compare contents:
   
-    ![2](https://cloud.githubusercontent.com/assets/19876131/25744684/df28fdb4-31a3-11e7-8546-4a14d3329d60.png)
+    ![2](https://cloud.githubusercontent.com/assets/19876131/25744711/fee71dd4-31a3-11e7-817e-8daac26d5797.png)
     
  
