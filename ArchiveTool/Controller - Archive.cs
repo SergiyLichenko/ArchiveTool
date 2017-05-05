@@ -12,25 +12,27 @@ namespace ArchiveTool
     delegate void ArhiveEnd(long inputSize, long outpuSize, double entropy, double entropy2, double bitPerSymbol);
     partial class Controller
     {
-        Model model;    //объект класса Model
-        public Node root;      //ссылка на корень дерева
-
-        Dictionary<int, List<int>> codesTable;    //таблица укороченных кодов
-
-        BackgroundWorker workerForArchive;      //поток для архивации
-        BackgroundWorker workerForUnArchive;    //поток для разархивации
-        BackgroundWorker workerForStatistics;
-        System.Windows.Forms.Timer timerForPers;
-        List<byte> coded;       //список закодированных байтов
-
-
-        StringBuilder treeCode;        //закодированное дерево
-        List<int> treePath;        //путь обхода по дереву
-
+         
+        public Node root;      
         public event ArhiveEnd arhiveEnd;
-        string fileNameFrom;
-        string fileNameTo;
-        public Controller()         // конструктор
+        
+        private Dictionary<int, List<int>> codesTable;   
+
+        private BackgroundWorker workerForArchive;     
+        private BackgroundWorker workerForUnArchive;    
+        private BackgroundWorker workerForStatistics;
+        private System.Windows.Forms.Timer timerForPers;
+        private List<byte> coded;       
+        private Model model; 
+
+        private StringBuilder treeCode;        
+        private List<int> treePath; 
+        private string fileNameFrom;
+        private string fileNameTo;
+        private double sizeFile;
+        private double forPers;
+        
+        public Controller()        
         {
             model = new Model();
             codesTable = new Dictionary<int, List<int>>();
@@ -79,9 +81,9 @@ namespace ArchiveTool
         {
             this.fileNameFrom = fileNameFrom;
             this.fileNameTo = fileNameTo;
-            workerForArchive.RunWorkerAsync();      //запуск архивации в фоновом потоке
+            workerForArchive.RunWorkerAsync();      
         }
-        private void WorkerForArchive_DoWork(object sender, DoWorkEventArgs e)  //архивация
+        private void WorkerForArchive_DoWork(object sender, DoWorkEventArgs e)  
         {
             while (model.creatingCounts)
                 ;
@@ -89,7 +91,7 @@ namespace ArchiveTool
             root = null;
             treeCode.Clear();
 
-            List<Node> fileData = model.CreateLeaves();   //считывания из файла
+            List<Node> fileData = model.CreateLeaves();  
             if (fileData.Count == 0)
                 return;
 
@@ -125,7 +127,7 @@ namespace ArchiveTool
         {
             model.CreateCounts((string)e.Argument, (BackgroundWorker)sender);
         }
-        private void WorkerForArchive_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)  //завершение потока архивации
+        private void WorkerForArchive_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)  
         {
             FileStream inPut =  File.OpenRead(fileNameFrom);
             FileStream outPu =  File.OpenRead(fileNameTo);
@@ -144,59 +146,55 @@ namespace ArchiveTool
                 
             }
         }
-        private Node CreateBinaryTree(List<Node> fileData)      //создание дерева
+        private Node CreateBinaryTree(List<Node> fileData)     
         {
             while (true)
             {
                 Node result = new Node();
-                result.Add(fileData[0], fileData[1]);           //объединение узлов дерева
+                result.Add(fileData[0], fileData[1]);           
                 result.Data = -1;
 
-                fileData.RemoveAt(0);                           //
-                fileData.RemoveAt(0);                           //добавление и удаление из списка узлов дерева
-                fileData.Add(result);                           //
+                fileData.RemoveAt(0);                          
+                fileData.RemoveAt(0);                         
+                fileData.Add(result);                         
 
                 fileData.Sort((a, b) => a.Weight.CompareTo(b.Weight));
 
                 if (fileData.Count == 1)
                     break;
             }
-            return fileData[0];                                 //возвращение корня дерева
+            return fileData[0];                               
         }
-
-
-
-        private void MakeCodes(Node root)                               //создание вспомагательной таблицы
+        
+        private void MakeCodes(Node root)                               
         {
             if (root == null)
                 return;
-            if (root.Left != null)                                      //идем влево
+            if (root.Left != null)                                      
             {
                 treePath.Add(0);
                 MakeCodes(root.Left);
             }
-            if (root.Right != null)                                     //идем вправо
+            if (root.Right != null)                                    
             {
                 treePath.Add(1);
                 MakeCodes(root.Right);
             }
 
-            if (root.Data != -1)                                        //если это лист дерева
-                codesTable.Add((byte)root.Data, new List<int>(treePath));              //добавление в таблицу
+            if (root.Data != -1)                                        
+                codesTable.Add((byte)root.Data, new List<int>(treePath));              
             if (treePath != null)
                 if (treePath.Count != 0)
                     treePath.RemoveAt(treePath.Count - 1);
         }
-
-
-
-        private void MakeTreePath(Node root)             //создание обхода дерева для архивации
+        
+        private void MakeTreePath(Node root)           
         {
             if (root == null)
                 return;
-            if (root.Left != null)                                  //пока можна идти по дереву
+            if (root.Left != null)                                
             {
-                treeCode.Append("1");                                    //пишем 1
+                treeCode.Append("1");                                   
                 MakeTreePath(root.Left);
             }
             if (root.Right != null)
@@ -204,20 +202,21 @@ namespace ArchiveTool
                 treeCode.Append("1");
                 MakeTreePath(root.Right);
             }
-            if (root.Data != -1)                                    //если встерилась буква
+            if (root.Data != -1)                                   
             {
-                string code = Convert.ToString(root.Data, 2);       //конвертация из числа в строку из 0,1
+                string code = Convert.ToString(root.Data, 2);     
 
-                if (code.Length != 8)                               //
-                    for (int i = code.Length; i < 8; i++)           //добавление в старшие разряды 0
-                        code = code.Insert(0, "0");                 //
+                if (code.Length != 8)                             
+                    for (int i = code.Length; i < 8; i++)           
+                        code = code.Insert(0, "0");               
 
-                treeCode.Append("0" + code);                             //добавление в путь обхода дерева
+                treeCode.Append("0" + code);                         
             }
         }
-        double sizeFile;
-        double forPers;
-        private void MakeArchivedCode()       //создание списка байтов для записи в файл
+        
+
+        
+        private void MakeArchivedCode()       
         {
             if (treeCode == null)
                 return;
@@ -254,11 +253,7 @@ namespace ArchiveTool
             for (int m = temp.Length; m < 8; m++)
                 temp.Insert(temp.Length, "0");
 
-
-
-
             int letter = Convert.ToByte(temp.ToString(), 2);
-
             while (true)
             {
                 try
@@ -304,7 +299,5 @@ namespace ArchiveTool
             output.Close();
 
         }
-
-
     }
 }
