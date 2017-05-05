@@ -31,8 +31,7 @@ Example of usage:
     
     It has the same size as the original file
     
-  7. Let's compare contents:
-  
+  7. Let's compare contents:  
     ![2](https://cloud.githubusercontent.com/assets/19876131/25744711/fee71dd4-31a3-11e7-817e-8daac26d5797.png)
     
  
